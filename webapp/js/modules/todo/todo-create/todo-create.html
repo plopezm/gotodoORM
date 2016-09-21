@@ -1,0 +1,19 @@
+<div class="w3-modal" id="modalCreate">
+	<div class="w3-modal-content w3-animate-zoom">
+		<header class="w3-container w3-teal"> 
+		      	<span onclick="document.getElementById('modalCreate').style.display='none'" 
+		      	class="w3-closebtn">&times;</span>
+		      	<h2>New Task</h2>
+	    	</header>
+
+		<div class="w3-container w3-margin-top">
+	      		<label>Name</label>
+			<input class="w3-input" ng-model="todoController.newTodo.name" type="text">
+
+			<label>Description</label>
+			<input class="w3-input" ng-model="todoController.newTodo.desc" type="text">
+			<br>
+		      	<button type="button" class="w3-btn w3-theme w3-margin-bottom" ng-click="todoController.saveTodo()"><i class="fa fa-pencil"></i>  Post</button>
+	    	</div>
+	</div>
+</div>

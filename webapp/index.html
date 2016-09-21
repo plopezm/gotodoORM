@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<title>Task manager web application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body ng-app="todoApp">
+
+<nav class="w3-sidenav w3-card-2 w3-white w3-animate-left" style="width:30%;display:none" id="mySidenav">
+	<div class="w3-container w3-theme-d2">
+	  <span onclick="w3_close()" class="w3-closenav w3-right w3-xlarge">x</span>
+	  <br>
+	  <div class="w3-padding w3-center">
+	    <img class="w3-circle" src="img/img_avatar2.png" alt="avatar" style="width:75%">
+	  </div>
+	</div>
+	<br>
+	<!--<a href="#">Add TODO</a>-->
+</nav>
+
+
+<todo-create></todo-create>
+
+<header class="w3-container w3-blue-grey">
+    <h3 class="w3-col" style="width:95%"><i class="w3-opennav fa fa-bars" onclick="w3_open()"></i> My Tasks</h3>
+    <div class="w3-col" style="width:5%;margin-top:10px;">
+	<button class="w3-btn w3-white" onclick="document.getElementById('modalCreate').style.display='block'" ><i class="fa fa-plus"></i></button>
+    </div>    
+	
+</header>
+
+
+
+<div class="w3-container">
+<hr>
+<div class="w3-row">
+ 	<todo-list></todo-list>
+</div>
+<hr>
+</div>
+
+<footer class="w3-container">
+  <p>Developed by Pablo López Martínez for education purpose</p>
+</footer>
+
+<script>
+function w3_open() {
+    document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+}
+</script>
+
+<script src="vendor/js/jquery-3.1.0.slim.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="js/modules/app.js"></script>
+<script src="js/modules/todo/services/todo-service.js"></script>
+<script src="js/modules/todo/controllers/todo-controller.js"></script>
+<script src="js/modules/todo/todo-list/todo-list-directive.js"></script>
+<script src="js/modules/todo/todo-create/todo-create-directive.js"></script>
+
+</body>
+</html>
+
+
