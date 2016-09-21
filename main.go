@@ -73,5 +73,6 @@ func main() {
 	//mdbOpenSession("localhost");
 
 	fmt.Println("====================================");
-	log.Fatal(http.ListenAndServe(port, router));
+	//log.Fatal(http.ListenAndServe(port, router));
+	log.Fatal(http.ListenAndServeTLS(port, "cert/cert.pem", "cert/key.pem", router));
 }
